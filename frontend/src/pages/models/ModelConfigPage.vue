@@ -24,7 +24,7 @@
       </div>
     </section>
 
-    <el-dialog v-model="showAddDialog" title="Add Model Config" class="workspace-dialog">
+    <el-dialog v-if="showAddDialog" :model-value="true" title="Add Model Config" class="workspace-dialog" @close="showAddDialog = false">
       <el-form :model="addForm">
         <el-form-item label="Model">
           <el-select v-model="addForm.model_definition_id" placeholder="Select model">
