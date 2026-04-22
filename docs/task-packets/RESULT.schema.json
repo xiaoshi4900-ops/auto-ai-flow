@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoaiflow.local/task-result.schema.json",
+  "title": "Task Packet Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "files_read",
+    "files_changed",
+    "dimensions_completed",
+    "tests_run",
+    "contract_gaps_found",
+    "notes"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "files_read": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "dimensions_completed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "D1",
+          "D2",
+          "D3",
+          "D4",
+          "D5"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "tests_run": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "contract_gaps_found": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

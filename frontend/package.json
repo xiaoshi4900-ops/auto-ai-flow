@@ -1,0 +1,48 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "test:e2e:5d": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts",
+    "test:e2e:5d:style": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts tests/e2e/workspace-table-theme-regression.spec.ts tests/e2e/workspace-dialog-theme.spec.ts tests/e2e/workspace-project-detail-style-contract.spec.ts -g \"D1 style|TBL-THEME|PW-DIALOG|PW-PD-STYLE\"",
+    "test:e2e:5d:style:white-leak": "playwright test tests/e2e/workspace-table-theme-regression.spec.ts tests/e2e/workspace-dialog-theme.spec.ts tests/e2e/workspace-project-detail-style-contract.spec.ts",
+    "test:e2e:5d:click": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts -g \"D2 click event\"",
+    "test:e2e:5d:field": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts -g \"D3 field mapping\"",
+    "test:e2e:5d:state": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts -g \"D4 state validation\"",
+    "test:e2e:5d:data": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts -g \"D5 data interaction/constraints\"",
+    "test:e2e:style-contracts": "playwright test tests/e2e/workspace-style-contract.spec.ts tests/e2e/workspace-model-style-contract.spec.ts tests/e2e/workspace-project-detail-style-contract.spec.ts tests/e2e/workspace-shell-style-contract.spec.ts tests/e2e/workspace-remaining-style-contract.spec.ts",
+    "test:e2e:field-contracts": "playwright test tests/e2e/workspace-field-alignment-contract.spec.ts tests/e2e/workspace-empty-and-field-mapping-contract.spec.ts tests/e2e/workspace-model-functional-contract.spec.ts tests/e2e/workspace-project-functional-contract.spec.ts tests/e2e/workspace-project-detail-functional-contract.spec.ts",
+    "test:e2e:all-pages-contracts": "playwright test tests/e2e/workspace-all-pages-contract.spec.ts",
+    "test:e2e:page-5d-matrix": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts",
+    "test:e2e:table-theme": "playwright test tests/e2e/workspace-table-theme-regression.spec.ts",
+    "test:e2e:contracts": "playwright test tests/e2e/workspace-page-5d-matrix.contract.spec.ts",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "@vue-flow/background": "^1.3.2",
+    "@vue-flow/controls": "^1.1.3",
+    "@vue-flow/core": "^1.48.2",
+    "@vueuse/core": "^14.2.1",
+    "axios": "^1.15.1",
+    "element-plus": "^2.13.7",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.32",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.9",
+    "vue-tsc": "^3.2.7"
+  }
+}

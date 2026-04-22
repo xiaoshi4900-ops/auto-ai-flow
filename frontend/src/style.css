@@ -1,0 +1,174 @@
+:root {
+  --font-sans: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Trebuchet MS", "Segoe UI", "PingFang SC", sans-serif;
+  --bg-base: #081019;
+  --bg-shell: #0b1420;
+  --bg-panel: rgba(12, 22, 34, 0.86);
+  --bg-panel-strong: rgba(16, 28, 43, 0.96);
+  --bg-muted: rgba(255, 255, 255, 0.04);
+  --bg-elevated: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(160, 190, 210, 0.16);
+  --border-strong: rgba(120, 255, 214, 0.28);
+  --text-primary: #f3f8fb;
+  --text-secondary: #9db0c0;
+  --text-muted: #718293;
+  --accent-primary: #56f0c0;
+  --accent-secondary: #3cb9ff;
+  --accent-warning: #f7b955;
+  --accent-danger: #ff6f7f;
+  --shadow-panel: 0 20px 40px rgba(0, 0, 0, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(86, 240, 192, 0.08), 0 20px 45px rgba(0, 0, 0, 0.22);
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top left, rgba(60, 185, 255, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(86, 240, 192, 0.16), transparent 24%),
+    linear-gradient(180deg, #09111a 0%, #081019 55%, #09131d 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(20px);
+}
+
+.grid-surface {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Unified dark dialog skin for workspace create/edit modals */
+.el-overlay.dialog-fade-enter-active,
+.el-overlay.dialog-fade-enter-to,
+.el-overlay.dialog-fade-leave-active {
+  backdrop-filter: blur(6px);
+}
+
+.el-overlay:has(.workspace-dialog) {
+  background-color: rgba(3, 10, 18, 0.72);
+}
+
+.workspace-dialog {
+  --el-dialog-bg-color: rgba(11, 21, 33, 0.96);
+  --el-dialog-border-radius: 20px;
+  --el-text-color-primary: var(--text-primary);
+  --el-text-color-regular: var(--text-secondary);
+  --el-border-color: rgba(160, 190, 210, 0.18);
+  --el-border-color-light: rgba(160, 190, 210, 0.14);
+  --el-fill-color-blank: rgba(13, 24, 37, 0.92);
+  --el-fill-color-light: rgba(255, 255, 255, 0.03);
+  --el-mask-color: rgba(3, 10, 18, 0.72);
+  border: 1px solid rgba(120, 255, 214, 0.2);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.46);
+}
+
+.workspace-dialog .el-dialog__header {
+  margin: 0;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.workspace-dialog .el-dialog__title {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.workspace-dialog .el-dialog__body {
+  padding: 18px 22px 8px;
+}
+
+.workspace-dialog .el-dialog__footer {
+  padding: 12px 22px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.workspace-dialog .el-form-item__label {
+  color: var(--text-secondary);
+}
+
+.workspace-dialog .el-input__wrapper,
+.workspace-dialog .el-textarea__inner {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(160, 190, 210, 0.2);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.workspace-dialog .el-input__wrapper:hover,
+.workspace-dialog .el-textarea__inner:hover {
+  border-color: rgba(160, 190, 210, 0.3);
+}
+
+.workspace-dialog .el-input.is-focus .el-input__wrapper,
+.workspace-dialog .el-textarea__inner:focus {
+  border-color: rgba(86, 240, 192, 0.4);
+  box-shadow: 0 0 0 3px rgba(86, 240, 192, 0.12);
+}
+
+.workspace-dialog .el-button:not(.el-button--primary) {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(160, 190, 210, 0.24);
+  color: var(--text-secondary);
+}
+
+.workspace-dialog .el-button:not(.el-button--primary):hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(160, 190, 210, 0.34);
+  color: var(--text-primary);
+}
+
+.workspace-dialog .el-button.el-button--primary {
+  border: 1px solid transparent;
+  color: #032123;
+  font-weight: 700;
+  background: linear-gradient(135deg, #56f0c0, #3cb9ff);
+}
+
+.workspace-dialog .el-button.el-button--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(60, 185, 255, 0.3);
+}
