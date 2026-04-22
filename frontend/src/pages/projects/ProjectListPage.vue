@@ -25,8 +25,10 @@
         <article v-for="project in projectStore.projects" :key="project.id" class="content-card" data-testid="project-card-item">
           <span class="chip" data-testid="project-card-status">{{ project.status || 'active' }}</span>
           <strong data-testid="project-card-name">{{ project.name }}</strong>
-          <p data-testid="project-card-desc">{{ project.description }}</p>
-          <small data-testid="project-card-updated">{{ project.updated_relative || formatDate(project.updated_at || project.created_at || '') }}</small>
+          <p data-testid="project-card-desc">{{ project.description || '-' }}</p>
+          <small data-testid="project-card-updated">
+            {{ project.updated_relative || formatRelativeTime(project.updated_at || project.created_at || '') }}
+          </small>
           <div class="card-actions">
             <button class="btn-secondary" @click="$router.push(`/projects/${project.id}`)">详情</button>
             <button class="btn-danger" @click="handleDelete(project.id)">删除</button>
@@ -54,30 +56,49 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import { useProjectStore } from '@/stores/project'
+import { computed, onMounted, ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { useProjectStore } from '@/stores/project'
 
 const projectStore = useProjectStore()
-const loading = ref(false)
 const showCreateDialog = ref(false)
 const createForm = ref({ name: '', description: '' })
 
 const totalProjects = computed(() => projectStore.projects.length)
-const activeRuns = ref('12')
-const recentUpdate = ref('10 min ago')
-
-onMounted(async () => {
-  loading.value = true
-  await projectStore.fetchProjects()
-  loading.value = false
+const activeRuns = computed(() => {
+  return projectStore.projects.filter((p) => ['running', 'active_running'].includes((p.status || '').toLowerCase())).length
+})
+const recentUpdate = computed(() => {
+  const timestamps = projectStore.projects
+    .map((p) => Date.parse(p.updated_at || p.created_at || ''))
+    .filter((v) => Number.isFinite(v))
+  if (!timestamps.length) return '-'
+  return formatRelativeTime(new Date(Math.max(...timestamps)).toISOString())
 })
 
-function formatDate(_dateStr: string) {
-  return '10 min ago'
+onMounted(async () => {
+  await projectStore.fetchProjects()
+})
+
+function formatRelativeTime(dateStr: string): string {
+  if (!dateStr) return '-'
+  const dateMs = Date.parse(dateStr)
+  if (!Number.isFinite(dateMs)) return '-'
+  const delta = Date.now() - dateMs
+  const minute = 60 * 1000
+  const hour = 60 * minute
+  const day = 24 * hour
+  if (delta < minute) return '刚刚'
+  if (delta < hour) return `${Math.floor(delta / minute)} 分钟前`
+  if (delta < day) return `${Math.floor(delta / hour)} 小时前`
+  return `${Math.floor(delta / day)} 天前`
 }
 
 async function handleCreate() {
+  if (!createForm.value.name.trim()) {
+    ElMessage.warning('项目名不能为空')
+    return
+  }
   await projectStore.createProject(createForm.value)
   ElMessage.success('Project created')
   showCreateDialog.value = false
