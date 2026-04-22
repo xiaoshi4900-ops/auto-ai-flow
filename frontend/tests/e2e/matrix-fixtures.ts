@@ -32,12 +32,6 @@ async function setupAuth(page: Page) {
   })
 }
 
-function corsFulfill(route: Parameters<Parameters<typeof route.fulfill>[0]>[0] extends never ? never : never, status: number, body: string) {
-  void route
-  void status
-  void body
-}
-
 async function setupWorkspaceApis(
   page: Page,
   input?: {
