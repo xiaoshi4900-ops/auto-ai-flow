@@ -10,27 +10,27 @@ Render agents as role cards for one project, not as raw database rows.
 
 ## Delegation Packet
 
-- [P04-agent-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P04-agent-list.packet.md)
+- [P04-agent-list.packet.md](docs/task-packets/P04-agent-list.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P04-agent-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P04-agent-list.md)
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/agent.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
-- [P04-agent-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P04-agent-list.packet.md)
+- [P04-agent-list.md](docs/spec-v2/pages/P04-agent-list.md)
+- [agent.md](docs/spec-v2/apis/agent.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
+- [P04-agent-list.packet.md](docs/task-packets/P04-agent-list.packet.md)
 
 ### Frontend Code
 
-- [AgentListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/agents/AgentListPage.vue)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/api/agent.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/agent.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/types/agent.ts)
+- [AgentListPage.vue](frontend/src/pages/agents/AgentListPage.vue)
+- [agent.ts](frontend/src/api/agent.ts)
+- [agent.ts](frontend/src/stores/agent.ts)
+- [agent.ts](frontend/src/types/agent.ts)
 
 ### Tests
 
-- [p04-agent-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p04-agent-list-5d.spec.ts)
+- [p04-agent-list-5d.spec.ts](frontend/tests/e2e/p04-agent-list-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -54,15 +54,15 @@ Render agents as role cards for one project, not as raw database rows.
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/agent.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [agent.md](docs/spec-v2/entities/agent.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/agent.md)
-- [p04-agent-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p04-agent-list-5d.spec.ts)
-- [AgentListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/agents/AgentListPage.vue)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/agent.ts)
+- [agent.md](docs/spec-v2/apis/agent.md)
+- [p04-agent-list-5d.spec.ts](frontend/tests/e2e/p04-agent-list-5d.spec.ts)
+- [AgentListPage.vue](frontend/src/pages/agents/AgentListPage.vue)
+- [agent.ts](frontend/src/stores/agent.ts)
 
 ## Allowed Write Files
 

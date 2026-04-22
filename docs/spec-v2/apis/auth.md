@@ -4,26 +4,26 @@
 
 ### Spec Docs
 
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/auth.md)
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/auth.md)
+- [auth.md](docs/spec-v2/apis/auth.md)
+- [auth.md](docs/spec-v2/backend/auth.md)
 
 ### Backend Code
 
-- [auth.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/auth.py)
-- [auth.py](/C:/workspace/AutoAiFlow/backend/app/schemas/auth.py)
-- [auth_service.py](/C:/workspace/AutoAiFlow/backend/app/services/auth_service.py)
+- [auth.py](backend/app/api/v1/auth.py)
+- [auth.py](backend/app/schemas/auth.py)
+- [auth_service.py](backend/app/services/auth_service.py)
 
 ### Frontend Code
 
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/api/auth.ts)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/auth.ts)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/types/auth.ts)
+- [auth.ts](frontend/src/api/auth.ts)
+- [auth.ts](frontend/src/stores/auth.ts)
+- [auth.ts](frontend/src/types/auth.ts)
 
 ### Tests
 
-- [test_auth_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_auth_schema.py)
-- [test_auth_api.py](/C:/workspace/AutoAiFlow/backend/tests/integration/test_auth_api.py)
-- [p01-login-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p01-login-5d.spec.ts)
+- [test_auth_schema.py](backend/tests/contract/test_auth_schema.py)
+- [test_auth_api.py](backend/tests/integration/test_auth_api.py)
+- [p01-login-5d.spec.ts](frontend/tests/e2e/p01-login-5d.spec.ts)
 ## Actual Routes
 
 - `POST /api/v1/auth/login`

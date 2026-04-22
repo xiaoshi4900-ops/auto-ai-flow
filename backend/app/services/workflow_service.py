@@ -24,10 +24,20 @@ class WorkflowService:
         for node in nodes:
             if node.node_type not in VALID_NODE_TYPES:
                 raise BadRequestException(f"Invalid node_type: {node.node_type}")
+        start_nodes = [n for n in nodes if n.node_type == "start"]
+        if len(start_nodes) != 1:
+            raise BadRequestException("Workflow must contain exactly one start node")
         node_keys = {n.node_key for n in nodes}
+        seen_edges = set()
         for edge in edges:
             if edge.source_node_key not in node_keys or edge.target_node_key not in node_keys:
                 raise BadRequestException(f"Edge references non-existent node: {edge.source_node_key} -> {edge.target_node_key}")
+            if edge.source_node_key == edge.target_node_key:
+                raise BadRequestException(f"Self loop is not allowed: {edge.source_node_key}")
+            edge_key = (edge.source_node_key, edge.target_node_key)
+            if edge_key in seen_edges:
+                raise BadRequestException(f"Duplicate edge is not allowed: {edge.source_node_key} -> {edge.target_node_key}")
+            seen_edges.add(edge_key)
 
     def create(self, req: WorkflowCreateRequest, user_id: int) -> WorkflowResponse:
         self._check_project_owner(req.project_id, user_id)
@@ -55,8 +65,29 @@ class WorkflowService:
             raise NotFoundException("Workflow")
         self._check_project_owner(workflow.project_id, user_id)
         update_data = req.model_dump(exclude_unset=True)
+        next_nodes = req.nodes if req.nodes is not None else [
+            WorkflowNodeSchema(
+                node_key=n.node_key,
+                node_type=n.node_type,
+                label=n.label,
+                config=n.config or {},
+                position_x=n.position_x,
+                position_y=n.position_y,
+            )
+            for n in workflow.nodes
+        ]
+        next_edges = req.edges if req.edges is not None else [
+            WorkflowEdgeSchema(
+                source_node_key=e.source_node_key,
+                target_node_key=e.target_node_key,
+                condition=e.condition,
+                label=e.label,
+            )
+            for e in workflow.edges
+        ]
+        if req.nodes is not None or req.edges is not None:
+            self._validate_workflow(next_nodes, next_edges)
         if req.nodes is not None:
-            self._validate_workflow(req.nodes, req.edges or [])
             update_data["nodes"] = [n.model_dump() for n in req.nodes]
         if req.edges is not None:
             update_data["edges"] = [e.model_dump() for e in req.edges]

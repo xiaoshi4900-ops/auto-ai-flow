@@ -1,49 +1,71 @@
 <template>
   <div v-if="selectedNode" class="node-config-panel">
     <div class="panel-header">
-      <h3>{{ selectedNode.label || selectedNode.node_key }}</h3>
+      <h3>{{ localLabel || selectedNode.node_key }}</h3>
       <el-tag size="small" :color="nodeColor" effect="dark" style="border: none">{{ selectedNode.node_type }}</el-tag>
     </div>
 
     <el-form label-position="top" size="small">
       <el-form-item label="节点标签">
-        <el-input v-model="localConfig.label" @change="emitChange" />
+        <el-input v-model="localLabel" @change="emitChange" />
       </el-form-item>
 
       <template v-if="selectedNode.node_type === 'agent'">
-        <el-form-item label="Agent ID">
-          <el-input-number v-model="localConfig.agent_id" :min="1" @change="emitChange" />
+        <el-form-item label="关联 Agent">
+          <el-select v-model="localConfig.agent_id" filterable @change="emitChange">
+            <el-option v-for="agent in agents" :key="agent.id" :label="agent.name" :value="agent.id" />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="模型覆盖 (optional)">
+          <el-select v-model="localConfig.model_override_id" clearable filterable @change="emitChange">
+            <el-option v-for="model in models" :key="model.id" :label="toModelLabel(model)" :value="model.id" />
+          </el-select>
         </el-form-item>
         <el-form-item label="Task Instruction">
           <el-input v-model="localConfig.task_instruction" type="textarea" :rows="3" @change="emitChange" />
         </el-form-item>
-        <el-form-item label="Input Mapping">
-          <el-input v-model="inputMappingStr" type="textarea" :rows="2" @change="parseInputMapping" />
+        <el-form-item label="Input Mapping(JSON)">
+          <el-input v-model="inputMappingStr" type="textarea" :rows="3" @change="parseInputMapping" />
         </el-form-item>
         <el-form-item label="Allow Tool Use">
           <el-switch v-model="localConfig.allow_tool_use" @change="emitChange" />
         </el-form-item>
       </template>
 
+      <template v-if="selectedNode.node_type === 'tool'">
+        <el-form-item label="关联 Tool">
+          <el-select v-model="localConfig.tool_id" filterable @change="emitChange">
+            <el-option v-for="tool in tools" :key="tool.id" :label="tool.name" :value="tool.id" />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="Input Mapping(JSON)">
+          <el-input v-model="inputMappingStr" type="textarea" :rows="3" @change="parseInputMapping" />
+        </el-form-item>
+      </template>
+
       <template v-if="selectedNode.node_type === 'condition'">
         <el-form-item label="分支规则">
           <div v-for="(branch, i) in branches" :key="i" class="branch-item">
-            <el-input v-model="branch.left_operand" placeholder="左操作数" @change="emitChange" />
-            <el-select v-model="branch.operator" style="width: 120px" @change="emitChange">
-              <el-option label="等于" value="equals" />
-              <el-option label="不等于" value="not_equals" />
-              <el-option label="大于" value="greater_than" />
-              <el-option label="小于" value="less_than" />
-              <el-option label="包含" value="contains" />
-              <el-option label="存在" value="exists" />
+            <el-input v-model="branch.left_operand" placeholder="left" @change="emitChange" />
+            <el-select v-model="branch.operator" style="width: 110px" @change="emitChange">
+              <el-option label="==" value="equals" />
+              <el-option label="!=" value="not_equals" />
+              <el-option label=">" value="greater_than" />
+              <el-option label="<" value="less_than" />
+              <el-option label="contains" value="contains" />
+              <el-option label="exists" value="exists" />
             </el-select>
-            <el-input v-model="branch.right_operand" placeholder="右操作数" @change="emitChange" />
-            <el-input v-model="branch.target_node_key" placeholder="目标节点" @change="emitChange" />
+            <el-input v-model="branch.right_operand" placeholder="right" @change="emitChange" />
+            <el-select v-model="branch.target_node_key" filterable placeholder="target" @change="emitChange">
+              <el-option v-for="n in nodeOptions" :key="n" :label="n" :value="n" />
+            </el-select>
           </div>
           <el-button size="small" @click="addBranch">添加分支</el-button>
         </el-form-item>
         <el-form-item label="默认目标节点">
-          <el-input v-model="localConfig.default_target_key" @change="emitChange" />
+          <el-select v-model="localConfig.default_target_key" filterable clearable @change="emitChange">
+            <el-option v-for="n in nodeOptions" :key="n" :label="n" :value="n" />
+          </el-select>
         </el-form-item>
       </template>
 
@@ -58,21 +80,6 @@
           </el-select>
         </el-form-item>
       </template>
-
-      <template v-if="selectedNode.node_type === 'input'">
-        <el-form-item label="Input Mapping">
-          <el-input v-model="inputMappingStr" type="textarea" :rows="3" @change="parseInputMapping" />
-        </el-form-item>
-      </template>
-
-      <template v-if="selectedNode.node_type === 'tool'">
-        <el-form-item label="Tool ID">
-          <el-input-number v-model="localConfig.tool_id" :min="1" @change="emitChange" />
-        </el-form-item>
-        <el-form-item label="Input Mapping">
-          <el-input v-model="inputMappingStr" type="textarea" :rows="2" @change="parseInputMapping" />
-        </el-form-item>
-      </template>
     </el-form>
   </div>
   <div v-else class="node-config-panel empty">
@@ -81,12 +88,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { NODE_TYPES } from '@/constants/workflow'
 import type { WorkflowNode } from '@/types/workflow'
+import type { Agent } from '@/types/agent'
+import type { Tool } from '@/types/tool'
+import type { ModelDefinition } from '@/types/model'
+import * as agentApi from '@/api/agent'
+import * as toolApi from '@/api/tool'
+import * as modelApi from '@/api/model'
 
 const props = defineProps<{
   selectedNode: WorkflowNode | null
+  projectId: number | null
+  nodeOptions: string[]
 }>()
 
 const emit = defineEmits<{
@@ -101,45 +116,71 @@ interface BranchRule {
   target_node_key: string
 }
 
-const localConfig = ref<Record<string, unknown>>({})
-const branches = computed<BranchRule[]>(() => (localConfig.value.branches ?? []) as BranchRule[])
+const localConfig = ref<Record<string, any>>({})
+const localLabel = ref('')
 const inputMappingStr = ref('')
+const agents = ref<Agent[]>([])
+const tools = ref<Tool[]>([])
+const models = ref<ModelDefinition[]>([])
+
+const branches = computed<BranchRule[]>(() => (localConfig.value.branches ?? []) as BranchRule[])
 
 const nodeColor = computed(() => {
   if (!props.selectedNode) return '#909399'
   return NODE_TYPES[props.selectedNode.node_type as keyof typeof NODE_TYPES]?.color || '#909399'
 })
 
+function toModelLabel(model: ModelDefinition): string {
+  return model.name && model.name !== model.model_id ? `${model.name} (${model.model_id})` : model.model_id
+}
+
+async function loadBindings() {
+  if (!props.projectId) return
+  const [agentRes, toolRes, modelRes] = await Promise.all([
+    agentApi.listAgents(props.projectId, 1, 200),
+    toolApi.listTools(1, 200),
+    modelApi.listModels(),
+  ])
+  agents.value = agentRes.items
+  tools.value = toolRes.items
+  models.value = modelRes.models
+}
+
 watch(
   () => props.selectedNode,
   (node) => {
-    if (node) {
-      localConfig.value = { ...node.config, label: node.label || '' }
-      inputMappingStr.value = node.config?.input_mapping ? JSON.stringify(node.config.input_mapping, null, 2) : ''
-    }
+    if (!node) return
+    localLabel.value = node.label || ''
+    localConfig.value = { ...(node.config || {}) }
+    inputMappingStr.value = node.config?.input_mapping ? JSON.stringify(node.config.input_mapping, null, 2) : ''
+  },
+  { immediate: true },
+)
+
+watch(
+  () => props.projectId,
+  () => {
+    void loadBindings()
   },
   { immediate: true },
 )
 
 function emitChange() {
   if (!props.selectedNode) return
-  const { label, ...config } = localConfig.value
-  emit('change', props.selectedNode.node_key, config as Record<string, unknown>, String(label || ''))
+  emit('change', props.selectedNode.node_key, { ...localConfig.value }, localLabel.value || props.selectedNode.label || '')
 }
 
 function parseInputMapping() {
   try {
     localConfig.value.input_mapping = JSON.parse(inputMappingStr.value)
   } catch {
-    // keep raw string
+    // keep current mapping unchanged when invalid JSON
   }
   emitChange()
 }
 
 function addBranch() {
-  if (!localConfig.value.branches) {
-    localConfig.value.branches = []
-  }
+  if (!localConfig.value.branches) localConfig.value.branches = []
   ;(localConfig.value.branches as BranchRule[]).push({
     expression_type: 'simple',
     left_operand: '',
@@ -149,28 +190,34 @@ function addBranch() {
   })
   emitChange()
 }
+
+onMounted(() => {
+  void loadBindings()
+})
 </script>
 
 <style scoped>
 .node-config-panel {
-  width: 320px;
+  width: 360px;
   padding: 16px;
   background: var(--bg-panel);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   overflow-y: auto;
-  max-height: 600px;
 }
+
 .panel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
+
 .panel-header h3 {
   margin: 0;
   font-size: 16px;
 }
+
 .empty {
   display: flex;
   align-items: center;
@@ -178,14 +225,12 @@ function addBranch() {
   color: var(--text-muted);
   min-height: 200px;
 }
+
 .branch-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 110px 1fr 1fr;
   gap: 6px;
   margin-bottom: 8px;
   align-items: center;
-}
-.branch-item .el-input,
-.branch-item .el-select {
-  flex: 1;
 }
 </style>

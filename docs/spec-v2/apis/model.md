@@ -4,25 +4,25 @@
 
 ### Spec Docs
 
-- [model.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/model.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
+- [model.md](docs/spec-v2/apis/model.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
 
 ### Backend Code
 
-- [models.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/models.py)
-- [model.py](/C:/workspace/AutoAiFlow/backend/app/schemas/model.py)
-- [model_service.py](/C:/workspace/AutoAiFlow/backend/app/services/model_service.py)
+- [models.py](backend/app/api/v1/models.py)
+- [model.py](backend/app/schemas/model.py)
+- [model_service.py](backend/app/services/model_service.py)
 
 ### Frontend Code
 
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/api/model.ts)
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/types/model.ts)
+- [model.ts](frontend/src/api/model.ts)
+- [model.ts](frontend/src/types/model.ts)
 
 ### Tests
 
-- [test_model_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_model_schema.py)
-- [p05-agent-edit-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
-- [p06-model-config-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p06-model-config-5d.spec.ts)
+- [test_model_schema.py](backend/tests/contract/test_model_schema.py)
+- [p05-agent-edit-5d.spec.ts](frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
+- [p06-model-config-5d.spec.ts](frontend/tests/e2e/p06-model-config-5d.spec.ts)
 ## Actual Routes
 
 - `GET /api/v1/models`

@@ -25,23 +25,25 @@ export function normalizeModelProvider(rawValue: unknown): ModelProvider {
     id: asNumber(raw.id),
     name: asString(raw.name),
     provider_type: asString(raw.provider_type),
-    api_base_url: asString(raw.api_base_url, asString(raw.api_base, null as unknown as string)),
-    is_active: asBool(raw.is_active, true),
+    api_base: asString(raw.api_base, asString(raw.api_base_url, null as unknown as string)),
+    is_builtin: asBool(raw.is_builtin, false),
   }
 }
 
 export function normalizeModelDefinition(rawValue: unknown): ModelDefinition {
   const raw = asRecord(rawValue)
-  const modelName = asString(raw.model_name, asString(raw.model_id, asString(raw.name)))
-  const displayName = asString(raw.display_name, asString(raw.name, modelName))
+  const name = asString(raw.name, asString(raw.display_name, asString(raw.model_name)))
+  const modelId = asString(raw.model_id, asString(raw.model_name))
+  const descriptionRaw = raw.description
+  const capabilitiesRaw = raw.capabilities
   return {
     id: asNumber(raw.id),
     provider_id: asNumber(raw.provider_id),
-    model_name: modelName,
-    display_name: displayName,
-    model_type: asString(raw.model_type, 'chat'),
-    context_window: asNumber(raw.context_window, 0),
-    is_active: asBool(raw.is_active, true),
+    name,
+    model_id: modelId,
+    description: typeof descriptionRaw === 'string' ? descriptionRaw : null,
+    capabilities: capabilitiesRaw && typeof capabilitiesRaw === 'object' ? (capabilitiesRaw as Record<string, unknown>) : null,
+    is_builtin: asBool(raw.is_builtin, false),
   }
 }
 

@@ -3,7 +3,15 @@ from sqlalchemy.orm import Session
 
 from app.db.session import get_db_session
 from app.api.deps import get_current_user_id
-from app.schemas.model import ModelListResponse, ProjectModelConfigCreateRequest, ProjectModelConfigResponse
+from app.schemas.model import (
+    ModelListResponse,
+    ModelProviderCreateRequest,
+    ModelProviderResponse,
+    ModelDefinitionCreateRequest,
+    ModelDefinitionResponse,
+    ProjectModelConfigCreateRequest,
+    ProjectModelConfigResponse,
+)
 from app.services.model_service import ModelService
 
 router = APIRouter()
@@ -13,6 +21,18 @@ router = APIRouter()
 def list_models(db: Session = Depends(get_db_session)):
     svc = ModelService(db)
     return svc.list_models()
+
+
+@router.post("/providers", response_model=ModelProviderResponse)
+def create_provider(req: ModelProviderCreateRequest, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db_session)):
+    svc = ModelService(db)
+    return svc.create_provider(req)
+
+
+@router.post("/definitions", response_model=ModelDefinitionResponse)
+def create_model_definition(req: ModelDefinitionCreateRequest, user_id: int = Depends(get_current_user_id), db: Session = Depends(get_db_session)):
+    svc = ModelService(db)
+    return svc.create_model_definition(req)
 
 
 @router.post("/project/{project_id}/configs", response_model=ProjectModelConfigResponse)

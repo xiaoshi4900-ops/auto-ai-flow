@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P07-workflow-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P07-workflow-list.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P07-workflow-list.md](docs/spec-v2/pages/P07-workflow-list.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P07-workflow-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P07-workflow-list.md)
+- [P07-workflow-list.md](docs/spec-v2/pages/P07-workflow-list.md)
 
 ## Task Mode
 

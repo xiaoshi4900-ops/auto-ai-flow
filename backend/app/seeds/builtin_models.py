@@ -5,6 +5,8 @@ BUILTIN_MODELS = {
         {"name": "Anthropic", "provider_type": "anthropic", "api_base": "https://api.anthropic.com", "is_builtin": True},
     ],
     "models": [
+        {"provider_name": "OpenAI", "name": "GPT-5.4", "model_id": "gpt-5.4", "description": "Latest high-capability model", "capabilities": {"vision": True, "function_calling": True}},
+        {"provider_name": "OpenAI", "name": "GPT-5.4-mini", "model_id": "gpt-5.4-mini", "description": "Lower-latency GPT-5.4 variant", "capabilities": {"vision": True, "function_calling": True}},
         {"provider_name": "OpenAI", "name": "GPT-4o", "model_id": "gpt-4o", "description": "Most capable OpenAI model", "capabilities": {"vision": True, "function_calling": True}},
         {"provider_name": "OpenAI", "name": "GPT-4o-mini", "model_id": "gpt-4o-mini", "description": "Fast and affordable", "capabilities": {"vision": True, "function_calling": True}},
         {"provider_name": "OpenAI", "name": "GPT-3.5 Turbo", "model_id": "gpt-3.5-turbo", "description": "Legacy fast model", "capabilities": {"function_calling": True}},

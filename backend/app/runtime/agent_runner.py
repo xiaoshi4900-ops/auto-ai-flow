@@ -7,18 +7,30 @@ class AgentRunner:
             from langchain_openai import ChatOpenAI
             from langchain_core.messages import SystemMessage, HumanMessage
 
-            model_id = "gpt-3.5-turbo"
+            # Safe defaults when no model resolution is available.
+            # Keep this aligned with current seeded baseline models.
+            model_id = "gpt-5.4"
             api_base = None
             api_key = None
 
             if model_config:
+                # model_config comes from ModelResolver, possibly enriched by project custom_config.
                 model_id = model_config.get("model_id", model_id)
                 api_base = model_config.get("api_base")
+                api_key = model_config.get("api_key")
 
             from app.core.config import settings
-            api_key = settings.OPENAI_API_KEY or None
+            # Fallback to global key only when project-level key is not configured.
+            if not api_key:
+                api_key = settings.OPENAI_API_KEY or None
 
-            llm = ChatOpenAI(model=model_id, openai_api_base=api_base, openai_api_key=api_key, temperature=0.7)
+            kwargs = {"model": model_id, "temperature": 0.7}
+            if api_base:
+                kwargs["openai_api_base"] = api_base
+            if api_key:
+                kwargs["openai_api_key"] = api_key
+            llm = ChatOpenAI(**kwargs)
+            # Keep message structure explicit to make prompt composition easy to audit.
             messages = [
                 SystemMessage(content=prompt_result.system_prompt),
                 HumanMessage(content=prompt_result.user_prompt),

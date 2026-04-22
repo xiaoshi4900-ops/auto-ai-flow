@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P06-model-config.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P06-model-config.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P06-model-config.md](docs/spec-v2/pages/P06-model-config.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P06-model-config.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P06-model-config.md)
+- [P06-model-config.md](docs/spec-v2/pages/P06-model-config.md)
 
 ## Task Mode
 

@@ -30,6 +30,20 @@ class ModelListResponse(BaseModel):
     models: list[ModelDefinitionResponse]
 
 
+class ModelProviderCreateRequest(BaseModel):
+    name: str
+    provider_type: str
+    api_base: str | None = None
+
+
+class ModelDefinitionCreateRequest(BaseModel):
+    provider_id: int
+    name: str
+    model_id: str
+    description: str | None = None
+    capabilities: dict | None = None
+
+
 class ProjectModelConfigCreateRequest(BaseModel):
     model_definition_id: int
     api_key: str | None = None
@@ -41,6 +55,8 @@ class ProjectModelConfigResponse(BaseModel):
     id: int
     project_id: int
     model_definition_id: int
+    custom_config: dict | None = None
+    has_api_key: bool = False
     is_default: bool = False
     created_at: datetime | None = None
 

@@ -4,31 +4,31 @@
 
 ### Spec Docs
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/project.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
+- [project.md](docs/spec-v2/apis/project.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
 
 ### Backend Code
 
-- [projects.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/projects.py)
-- [project.py](/C:/workspace/AutoAiFlow/backend/app/schemas/project.py)
-- [project_service.py](/C:/workspace/AutoAiFlow/backend/app/services/project_service.py)
+- [projects.py](backend/app/api/v1/projects.py)
+- [project.py](backend/app/schemas/project.py)
+- [project_service.py](backend/app/services/project_service.py)
 
 ### Frontend Code
 
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/api/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/types/project.ts)
+- [project.ts](frontend/src/api/project.ts)
+- [project.ts](frontend/src/stores/project.ts)
+- [project.ts](frontend/src/types/project.ts)
 
 ### Tests
 
-- [test_project_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_project_schema.py)
-- [test_project_api.py](/C:/workspace/AutoAiFlow/backend/tests/integration/test_project_api.py)
-- [p02-project-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p02-project-list-5d.spec.ts)
-- [p03-project-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p03-project-detail-5d.spec.ts)
+- [test_project_schema.py](backend/tests/contract/test_project_schema.py)
+- [test_project_api.py](backend/tests/integration/test_project_api.py)
+- [p02-project-list-5d.spec.ts](frontend/tests/e2e/p02-project-list-5d.spec.ts)
+- [p03-project-detail-5d.spec.ts](frontend/tests/e2e/p03-project-detail-5d.spec.ts)
 ## Cross-page Entity Contract
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/project.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [project.md](docs/spec-v2/entities/project.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Actual Routes
 

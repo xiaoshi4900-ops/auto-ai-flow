@@ -22,6 +22,7 @@ class WorkflowExecutor:
         self.context_manager = ContextManager()
 
     def execute(self, workflow_run_id: int) -> dict:
+        # 1) Load run and mark it running before any node execution.
         run = self.run_repo.get_run_by_id(workflow_run_id)
         if not run:
             logger.error(f"WorkflowRun {workflow_run_id} not found")
@@ -35,6 +36,7 @@ class WorkflowExecutor:
             self.run_repo.update_run_status(run, RUN_STATUS_FAILED, error_message="Workflow not found")
             return {"workflow_run_id": workflow_run_id, "status": "failed", "final_output": {}}
 
+        # Runtime context is the only cross-node data carrier in one run.
         context = self.context_manager.init_context(run.input_payload or {})
 
         nodes = {n.node_key: n for n in workflow.nodes}
@@ -52,6 +54,9 @@ class WorkflowExecutor:
         current_key = start_node.node_key
         visited = set()
 
+        # Main execution loop:
+        # - follows directed edges node by node
+        # - stops on end-of-graph or cycle detection
         while current_key and current_key not in visited:
             visited.add(current_key)
             node = nodes.get(current_key)
@@ -69,6 +74,7 @@ class WorkflowExecutor:
             try:
                 executor = self.executor_factory.get_executor(node.node_type)
                 result = executor.execute(run, node, context)
+                # Merge current node output back into shared runtime context.
                 context = self.context_manager.merge_node_result(context, node.node_key, result)
 
                 self.run_repo.update_node_run(
@@ -83,6 +89,8 @@ class WorkflowExecutor:
                     self.run_repo.update_run_status(run, RUN_STATUS_FAILED, error_message=result.error_message)
                     return {"workflow_run_id": workflow_run_id, "status": "failed", "final_output": {}}
 
+                # Condition nodes can explicitly route to a branch target;
+                # all other nodes follow the first outgoing edge.
                 if node.node_type == NODE_TYPE_CONDITION and result.next_node_key:
                     current_key = result.next_node_key
                 else:

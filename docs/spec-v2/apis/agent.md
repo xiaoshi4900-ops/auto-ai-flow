@@ -4,37 +4,37 @@
 
 ### Spec Docs
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/agent.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
+- [agent.md](docs/spec-v2/apis/agent.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
 
 ### Backend Code
 
-- [agents.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/agents.py)
-- [agent.py](/C:/workspace/AutoAiFlow/backend/app/schemas/agent.py)
-- [skills.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/skills.py)
-- [tools.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/tools.py)
-- [role_templates.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/role_templates.py)
-- [agent_service.py](/C:/workspace/AutoAiFlow/backend/app/services/agent_service.py)
+- [agents.py](backend/app/api/v1/agents.py)
+- [agent.py](backend/app/schemas/agent.py)
+- [skills.py](backend/app/api/v1/skills.py)
+- [tools.py](backend/app/api/v1/tools.py)
+- [role_templates.py](backend/app/api/v1/role_templates.py)
+- [agent_service.py](backend/app/services/agent_service.py)
 
 ### Frontend Code
 
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/api/agent.ts)
-- [roleTemplate.ts](/C:/workspace/AutoAiFlow/frontend/src/api/roleTemplate.ts)
-- [skill.ts](/C:/workspace/AutoAiFlow/frontend/src/api/skill.ts)
-- [tool.ts](/C:/workspace/AutoAiFlow/frontend/src/api/tool.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/agent.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/types/agent.ts)
+- [agent.ts](frontend/src/api/agent.ts)
+- [roleTemplate.ts](frontend/src/api/roleTemplate.ts)
+- [skill.ts](frontend/src/api/skill.ts)
+- [tool.ts](frontend/src/api/tool.ts)
+- [agent.ts](frontend/src/stores/agent.ts)
+- [agent.ts](frontend/src/types/agent.ts)
 
 ### Tests
 
-- [test_agent_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_agent_schema.py)
-- [test_agent_api.py](/C:/workspace/AutoAiFlow/backend/tests/integration/test_agent_api.py)
-- [p04-agent-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p04-agent-list-5d.spec.ts)
-- [p05-agent-edit-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
+- [test_agent_schema.py](backend/tests/contract/test_agent_schema.py)
+- [test_agent_api.py](backend/tests/integration/test_agent_api.py)
+- [p04-agent-list-5d.spec.ts](frontend/tests/e2e/p04-agent-list-5d.spec.ts)
+- [p05-agent-edit-5d.spec.ts](frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
 ## Cross-page Entity Contract
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/agent.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [agent.md](docs/spec-v2/entities/agent.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Actual Routes
 

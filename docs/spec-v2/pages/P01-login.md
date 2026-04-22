@@ -10,27 +10,27 @@ Authenticate the user and redirect to project list.
 
 ## Delegation Packet
 
-- [P01-login.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P01-login.packet.md)
+- [P01-login.packet.md](docs/task-packets/P01-login.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P01-login.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P01-login.md)
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/auth.md)
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/auth.md)
-- [P01-login.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P01-login.packet.md)
+- [P01-login.md](docs/spec-v2/pages/P01-login.md)
+- [auth.md](docs/spec-v2/apis/auth.md)
+- [auth.md](docs/spec-v2/backend/auth.md)
+- [P01-login.packet.md](docs/task-packets/P01-login.packet.md)
 
 ### Frontend Code
 
-- [LoginPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/auth/LoginPage.vue)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/api/auth.ts)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/auth.ts)
-- [useLogin.ts](/C:/workspace/AutoAiFlow/frontend/src/composables/useLogin.ts)
+- [LoginPage.vue](frontend/src/pages/auth/LoginPage.vue)
+- [auth.ts](frontend/src/api/auth.ts)
+- [auth.ts](frontend/src/stores/auth.ts)
+- [useLogin.ts](frontend/src/composables/useLogin.ts)
 
 ### Tests
 
-- [p01-login-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p01-login-5d.spec.ts)
+- [p01-login-5d.spec.ts](frontend/tests/e2e/p01-login-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -54,12 +54,12 @@ Authenticate the user and redirect to project list.
 - editing files outside `Allowed Write Files`
 ## Read First
 
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/auth.md)
-- [auth.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/auth.md)
-- [p01-login-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p01-login-5d.spec.ts)
-- [LoginPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/auth/LoginPage.vue)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/api/auth.ts)
-- [auth.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/auth.ts)
+- [auth.md](docs/spec-v2/apis/auth.md)
+- [auth.md](docs/spec-v2/backend/auth.md)
+- [p01-login-5d.spec.ts](frontend/tests/e2e/p01-login-5d.spec.ts)
+- [LoginPage.vue](frontend/src/pages/auth/LoginPage.vue)
+- [auth.ts](frontend/src/api/auth.ts)
+- [auth.ts](frontend/src/stores/auth.ts)
 
 ## Allowed Write Files
 

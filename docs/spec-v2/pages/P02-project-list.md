@@ -10,27 +10,27 @@ Render project cards, support create, and keep UI fully driven by project list d
 
 ## Delegation Packet
 
-- [P02-project-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P02-project-list.packet.md)
+- [P02-project-list.packet.md](docs/task-packets/P02-project-list.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P02-project-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P02-project-list.md)
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/project.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
-- [P02-project-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P02-project-list.packet.md)
+- [P02-project-list.md](docs/spec-v2/pages/P02-project-list.md)
+- [project.md](docs/spec-v2/apis/project.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
+- [P02-project-list.packet.md](docs/task-packets/P02-project-list.packet.md)
 
 ### Frontend Code
 
-- [ProjectListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/projects/ProjectListPage.vue)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/api/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/types/project.ts)
+- [ProjectListPage.vue](frontend/src/pages/projects/ProjectListPage.vue)
+- [project.ts](frontend/src/api/project.ts)
+- [project.ts](frontend/src/stores/project.ts)
+- [project.ts](frontend/src/types/project.ts)
 
 ### Tests
 
-- [p02-project-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p02-project-list-5d.spec.ts)
+- [p02-project-list-5d.spec.ts](frontend/tests/e2e/p02-project-list-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -54,18 +54,18 @@ Render project cards, support create, and keep UI fully driven by project list d
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/project.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [project.md](docs/spec-v2/entities/project.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/project.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
-- [p02-project-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p02-project-list-5d.spec.ts)
-- [ProjectListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/projects/ProjectListPage.vue)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/api/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/project.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/types/project.ts)
+- [project.md](docs/spec-v2/apis/project.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
+- [p02-project-list-5d.spec.ts](frontend/tests/e2e/p02-project-list-5d.spec.ts)
+- [ProjectListPage.vue](frontend/src/pages/projects/ProjectListPage.vue)
+- [project.ts](frontend/src/api/project.ts)
+- [project.ts](frontend/src/stores/project.ts)
+- [project.ts](frontend/src/types/project.ts)
 
 ## Allowed Write Files
 

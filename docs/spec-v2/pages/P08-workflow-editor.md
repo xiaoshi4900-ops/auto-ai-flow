@@ -10,32 +10,32 @@ Deliver one-screen editing and runtime observation with a stable save and run co
 
 ## Delegation Packet
 
-- [P08-workflow-editor.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P08-workflow-editor.packet.md)
+- [P08-workflow-editor.packet.md](docs/task-packets/P08-workflow-editor.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P08-workflow-editor.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P08-workflow-editor.md)
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [P08-workflow-editor.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P08-workflow-editor.packet.md)
+- [P08-workflow-editor.md](docs/spec-v2/pages/P08-workflow-editor.md)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [P08-workflow-editor.packet.md](docs/task-packets/P08-workflow-editor.packet.md)
 
 ### Frontend Code
 
-- [WorkflowEditorPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowEditorPage.vue)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/api/workflow.ts)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/api/execution.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/workflow.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/types/workflow.ts)
-- [WorkflowCanvas.vue](/C:/workspace/AutoAiFlow/frontend/src/components/workflows/WorkflowCanvas.vue)
-- [NodeConfigPanel.vue](/C:/workspace/AutoAiFlow/frontend/src/components/workflows/NodeConfigPanel.vue)
-- [NodePalette.vue](/C:/workspace/AutoAiFlow/frontend/src/components/workflows/NodePalette.vue)
+- [WorkflowEditorPage.vue](frontend/src/pages/workflows/WorkflowEditorPage.vue)
+- [workflow.ts](frontend/src/api/workflow.ts)
+- [execution.ts](frontend/src/api/execution.ts)
+- [workflow.ts](frontend/src/stores/workflow.ts)
+- [workflow.ts](frontend/src/types/workflow.ts)
+- [WorkflowCanvas.vue](frontend/src/components/workflows/WorkflowCanvas.vue)
+- [NodeConfigPanel.vue](frontend/src/components/workflows/NodeConfigPanel.vue)
+- [NodePalette.vue](frontend/src/components/workflows/NodePalette.vue)
 
 ### Tests
 
-- [p08-workflow-editor-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
+- [p08-workflow-editor-5d.spec.ts](frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -59,19 +59,19 @@ Deliver one-screen editing and runtime observation with a stable save and run co
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/workflow.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [workflow.md](docs/spec-v2/entities/workflow.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [p08-workflow-editor-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
-- [WorkflowEditorPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowEditorPage.vue)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/workflow.ts)
-- [WorkflowCanvas.vue](/C:/workspace/AutoAiFlow/frontend/src/components/workflows/WorkflowCanvas.vue)
-- [NodeConfigPanel.vue](/C:/workspace/AutoAiFlow/frontend/src/components/workflows/NodeConfigPanel.vue)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [p08-workflow-editor-5d.spec.ts](frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
+- [WorkflowEditorPage.vue](frontend/src/pages/workflows/WorkflowEditorPage.vue)
+- [workflow.ts](frontend/src/stores/workflow.ts)
+- [WorkflowCanvas.vue](frontend/src/components/workflows/WorkflowCanvas.vue)
+- [NodeConfigPanel.vue](frontend/src/components/workflows/NodeConfigPanel.vue)
 
 ## Allowed Write Files
 

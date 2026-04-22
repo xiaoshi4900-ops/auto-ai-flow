@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P02-project-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P02-project-list.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P02-project-list.md](docs/spec-v2/pages/P02-project-list.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P02-project-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P02-project-list.md)
+- [P02-project-list.md](docs/spec-v2/pages/P02-project-list.md)
 
 ## Task Mode
 

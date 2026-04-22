@@ -26,6 +26,7 @@ class AgentNodeExecutor:
         model_override_id = config.get("model_override_id")
         retry_limit = config.get("retry_limit", 0)
 
+        # Resolve node execution strategy first, then route to normal/code path.
         execution_mode = resolve_execution_mode(
             node_config=config,
             skill=None,
@@ -38,6 +39,7 @@ class AgentNodeExecutor:
         return self._execute_normal(workflow_run, workflow_node, runtime_context, config, agent_id, task_instruction, input_mapping, model_override_id, retry_limit)
 
     def _execute_normal(self, workflow_run, workflow_node, runtime_context, config, agent_id, task_instruction, input_mapping, model_override_id, retry_limit):
+        # Build mapped input from previous node outputs by dotted path references.
         mapped_input = {}
         for target_key, source_path in input_mapping.items():
             parts = source_path.split(".")
@@ -64,6 +66,7 @@ class AgentNodeExecutor:
             project_id=workflow_run.workflow.project_id if workflow_run.workflow else None,
         )
 
+        # Retry only within this node boundary; no cross-node retries here.
         last_error = None
         for attempt in range(retry_limit + 1):
             try:
@@ -95,12 +98,14 @@ class AgentNodeExecutor:
         if code_policy and isinstance(code_policy, dict):
             max_iterations = code_policy.get("max_iterations", 3)
 
+        # Code runner expects a plain dict context; normalize from Pydantic/dataclass-like inputs.
         context_dict = {}
         if runtime_context and hasattr(runtime_context, "model_dump"):
             context_dict = runtime_context.model_dump()
         elif runtime_context and hasattr(runtime_context, "__dict__"):
             context_dict = {k: v for k, v in runtime_context.__dict__.items() if not k.startswith("_")}
 
+        # CodeSkillRunner controls iterative code-task state transitions.
         result = self.code_runner.run(
             workflow_run=workflow_run,
             workflow_node=workflow_node,

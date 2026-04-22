@@ -10,29 +10,29 @@ Render one run as a debuggable execution record while clearly marking optional e
 
 ## Delegation Packet
 
-- [P10-run-detail.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P10-run-detail.packet.md)
+- [P10-run-detail.packet.md](docs/task-packets/P10-run-detail.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P10-run-detail.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P10-run-detail.md)
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [run-query.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/run-query.md)
-- [P10-run-detail.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P10-run-detail.packet.md)
+- [P10-run-detail.md](docs/spec-v2/pages/P10-run-detail.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [run-query.md](docs/spec-v2/backend/run-query.md)
+- [P10-run-detail.packet.md](docs/task-packets/P10-run-detail.packet.md)
 
 ### Frontend Code
 
-- [RunDetailPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/runs/RunDetailPage.vue)
-- [useRunPolling.ts](/C:/workspace/AutoAiFlow/frontend/src/composables/useRunPolling.ts)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/api/execution.ts)
-- [run.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/run.ts)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/types/execution.ts)
+- [RunDetailPage.vue](frontend/src/pages/runs/RunDetailPage.vue)
+- [useRunPolling.ts](frontend/src/composables/useRunPolling.ts)
+- [execution.ts](frontend/src/api/execution.ts)
+- [run.ts](frontend/src/stores/run.ts)
+- [execution.ts](frontend/src/types/execution.ts)
 
 ### Tests
 
-- [p10-run-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p10-run-detail-5d.spec.ts)
+- [p10-run-detail-5d.spec.ts](frontend/tests/e2e/p10-run-detail-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -56,17 +56,17 @@ Render one run as a debuggable execution record while clearly marking optional e
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [run.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/run.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [run.md](docs/spec-v2/entities/run.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [run-query.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/run-query.md)
-- [p10-run-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p10-run-detail-5d.spec.ts)
-- [RunDetailPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/runs/RunDetailPage.vue)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/types/execution.ts)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [run-query.md](docs/spec-v2/backend/run-query.md)
+- [p10-run-detail-5d.spec.ts](frontend/tests/e2e/p10-run-detail-5d.spec.ts)
+- [RunDetailPage.vue](frontend/src/pages/runs/RunDetailPage.vue)
+- [execution.ts](frontend/src/types/execution.ts)
 
 ## Allowed Write Files
 

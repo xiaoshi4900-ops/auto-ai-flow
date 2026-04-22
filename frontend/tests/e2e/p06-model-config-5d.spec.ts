@@ -29,19 +29,19 @@ test.describe('Page 5D Matrix - Model Config (/models)', () => {
 
   test('P06-D3 field mapping', async ({ page }) => {
     await setupWorkspaceApis(page, {
-      providers: [{ id: 1, name: 'API-PROVIDER-5D', provider_type: 'api', is_active: true }],
+      providers: [{ id: 1, name: 'API-PROVIDER-5D', provider_type: 'api', api_base: null, is_builtin: false }],
       models: [
         {
           id: 1,
           provider_id: 1,
-          model_name: 'api/model-5d',
-          display_name: 'API-MODEL-5D',
-          model_type: 'chat',
-          context_window: 1234,
-          is_active: true,
+          name: 'API-MODEL-5D',
+          model_id: 'api/model-5d',
+          description: null,
+          capabilities: null,
+          is_builtin: false,
         },
       ],
-      modelConfigs: [{ id: 1, project_id: 1, model_definition_id: 1, custom_config: null, is_default: true }],
+      modelConfigs: [{ id: 1, project_id: 1, model_definition_id: 1, is_default: true }],
     })
     await page.goto('/models')
     await expect(page.getByText('API-PROVIDER-5D')).toBeVisible()
@@ -59,16 +59,16 @@ test.describe('Page 5D Matrix - Model Config (/models)', () => {
 
   test('P06-D5 data interaction/constraints', async ({ page }) => {
     await setupWorkspaceApis(page, {
-      providers: [{ id: 1, name: 'API-PROVIDER-5D', provider_type: 'api', is_active: true }],
+      providers: [{ id: 1, name: 'API-PROVIDER-5D', provider_type: 'api', api_base: null, is_builtin: false }],
       models: [
         {
           id: 1,
           provider_id: 1,
-          model_name: 'api/model-5d',
-          display_name: 'API-MODEL-5D',
-          model_type: 'chat',
-          context_window: 1234,
-          is_active: true,
+          name: 'API-MODEL-5D',
+          model_id: 'api/model-5d',
+          description: null,
+          capabilities: null,
+          is_builtin: false,
         },
       ],
       modelConfigs: [],

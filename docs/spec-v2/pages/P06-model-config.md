@@ -10,26 +10,26 @@ Manage model configuration while respecting backend/frontend field mismatches ex
 
 ## Delegation Packet
 
-- [P06-model-config.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P06-model-config.packet.md)
+- [P06-model-config.packet.md](docs/task-packets/P06-model-config.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P06-model-config.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P06-model-config.md)
-- [model.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/model.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
-- [P06-model-config.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P06-model-config.packet.md)
+- [P06-model-config.md](docs/spec-v2/pages/P06-model-config.md)
+- [model.md](docs/spec-v2/apis/model.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
+- [P06-model-config.packet.md](docs/task-packets/P06-model-config.packet.md)
 
 ### Frontend Code
 
-- [ModelConfigPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/models/ModelConfigPage.vue)
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/api/model.ts)
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/types/model.ts)
+- [ModelConfigPage.vue](frontend/src/pages/models/ModelConfigPage.vue)
+- [model.ts](frontend/src/api/model.ts)
+- [model.ts](frontend/src/types/model.ts)
 
 ### Tests
 
-- [p06-model-config-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p06-model-config-5d.spec.ts)
+- [p06-model-config-5d.spec.ts](frontend/tests/e2e/p06-model-config-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -53,10 +53,10 @@ Manage model configuration while respecting backend/frontend field mismatches ex
 - editing files outside `Allowed Write Files`
 ## Read First
 
-- [model.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/model.md)
-- [p06-model-config-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p06-model-config-5d.spec.ts)
-- [ModelConfigPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/models/ModelConfigPage.vue)
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/types/model.ts)
+- [model.md](docs/spec-v2/apis/model.md)
+- [p06-model-config-5d.spec.ts](frontend/tests/e2e/p06-model-config-5d.spec.ts)
+- [ModelConfigPage.vue](frontend/src/pages/models/ModelConfigPage.vue)
+- [model.ts](frontend/src/types/model.ts)
 
 ## Allowed Write Files
 

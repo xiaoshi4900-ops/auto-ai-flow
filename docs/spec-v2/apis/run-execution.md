@@ -4,39 +4,39 @@
 
 ### Spec Docs
 
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [run-query.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/run-query.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [run-query.md](docs/spec-v2/backend/run-query.md)
 
 ### Backend Code
 
-- [executions.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/executions.py)
-- [runs.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/runs.py)
-- [execution.py](/C:/workspace/AutoAiFlow/backend/app/schemas/execution.py)
-- [execution_service.py](/C:/workspace/AutoAiFlow/backend/app/services/execution_service.py)
-- [code_runtime.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/code_runtime.py)
-- [code_runtime_service.py](/C:/workspace/AutoAiFlow/backend/app/services/code_runtime_service.py)
+- [executions.py](backend/app/api/v1/executions.py)
+- [runs.py](backend/app/api/v1/runs.py)
+- [execution.py](backend/app/schemas/execution.py)
+- [execution_service.py](backend/app/services/execution_service.py)
+- [code_runtime.py](backend/app/api/v1/code_runtime.py)
+- [code_runtime_service.py](backend/app/services/code_runtime_service.py)
 
 ### Frontend Code
 
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/api/execution.ts)
-- [run.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/run.ts)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/types/execution.ts)
-- [RunListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/runs/RunListPage.vue)
-- [RunDetailPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/runs/RunDetailPage.vue)
-- [useRunPolling.ts](/C:/workspace/AutoAiFlow/frontend/src/composables/useRunPolling.ts)
+- [execution.ts](frontend/src/api/execution.ts)
+- [run.ts](frontend/src/stores/run.ts)
+- [execution.ts](frontend/src/types/execution.ts)
+- [RunListPage.vue](frontend/src/pages/runs/RunListPage.vue)
+- [RunDetailPage.vue](frontend/src/pages/runs/RunDetailPage.vue)
+- [useRunPolling.ts](frontend/src/composables/useRunPolling.ts)
 
 ### Tests
 
-- [test_execution_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_execution_schema.py)
-- [test_run_api.py](/C:/workspace/AutoAiFlow/backend/tests/integration/test_run_api.py)
-- [p08-workflow-editor-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
-- [p09-run-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p09-run-list-5d.spec.ts)
-- [p10-run-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p10-run-detail-5d.spec.ts)
+- [test_execution_schema.py](backend/tests/contract/test_execution_schema.py)
+- [test_run_api.py](backend/tests/integration/test_run_api.py)
+- [p08-workflow-editor-5d.spec.ts](frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
+- [p09-run-list-5d.spec.ts](frontend/tests/e2e/p09-run-list-5d.spec.ts)
+- [p10-run-detail-5d.spec.ts](frontend/tests/e2e/p10-run-detail-5d.spec.ts)
 ## Cross-page Entity Contract
 
-- [run.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/run.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [run.md](docs/spec-v2/entities/run.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Actual Routes
 

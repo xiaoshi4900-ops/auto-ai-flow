@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P01-login.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P01-login.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P01-login.md](docs/spec-v2/pages/P01-login.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P01-login.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P01-login.md)
+- [P01-login.md](docs/spec-v2/pages/P01-login.md)
 
 ## Task Mode
 

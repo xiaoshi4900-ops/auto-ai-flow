@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P05-agent-edit.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P05-agent-edit.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P05-agent-edit.md](docs/spec-v2/pages/P05-agent-edit.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P05-agent-edit.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P05-agent-edit.md)
+- [P05-agent-edit.md](docs/spec-v2/pages/P05-agent-edit.md)
 
 ## Task Mode
 

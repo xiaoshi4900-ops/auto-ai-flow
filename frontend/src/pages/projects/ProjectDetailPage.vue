@@ -2,17 +2,17 @@
   <div class="project-detail-page" data-testid="project-detail-page">
     <section class="detail-grid">
       <div class="glass-card section-card" data-testid="project-summary-panel">
-        <span class="chip" data-testid="project-summary-status">{{ currentProject?.status || 'active' }}</span>
+        <span class="chip" data-testid="project-summary-status">active</span>
         <h2 data-testid="project-summary-name">{{ currentProject?.name || '项目' }}</h2>
         <p data-testid="project-summary-description">{{ currentProject?.description || '-' }}</p>
         <div class="meta-grid" data-testid="project-summary-meta-grid">
           <div data-testid="project-summary-meta-model">
             <span>默认模型</span>
-            <strong>{{ currentProject?.default_model_name || '-' }}</strong>
+            <strong>{{ currentProject?.default_model_id ?? '-' }}</strong>
           </div>
           <div data-testid="project-summary-meta-updated">
             <span>最近更新</span>
-            <strong>{{ currentProject?.updated_relative || '-' }}</strong>
+            <strong>{{ currentProject?.updated_at || '-' }}</strong>
           </div>
         </div>
       </div>
@@ -36,16 +36,16 @@
     </section>
     <section class="content-grid">
       <div class="glass-card section-card" data-testid="project-recent-workflows">
-        <h2>最近 Workflow</h2>
+        <h2>已绑定 Workflows</h2>
         <template v-if="workflows.length">
           <div
-            v-for="wf in workflows.slice(0, 2)"
+            v-for="wf in workflows.slice(0, 5)"
             :key="wf.id"
             class="list-card clickable"
             data-testid="project-recent-workflow-item"
             @click="$router.push(`/workflows/${wf.id}/editor`)"
           >
-            {{ wf.name }} / {{ wf.status || 'draft' }} / {{ wf.nodes?.length || 0 }} nodes
+            {{ wf.name }} / {{ wf.nodes?.length || 0 }} nodes / {{ wf.edges?.length || 0 }} edges
           </div>
         </template>
         <div v-else class="empty-card" data-testid="project-detail-workflows-empty-state">暂无 Workflow</div>
@@ -53,8 +53,8 @@
       <div class="glass-card section-card" data-testid="project-recent-runs">
         <h2>最近 Runs</h2>
         <template v-if="runs.length">
-          <div v-for="run in runs.slice(0, 2)" :key="run.id" class="list-card" data-testid="project-recent-run-item">
-            run_{{ run.id }} / {{ run.status }}
+          <div v-for="run in runs.slice(0, 5)" :key="run.id" class="list-card clickable" data-testid="project-recent-run-item" @click="$router.push(`/runs/${run.id}`)">
+            run_{{ run.id }} / workflow_{{ run.workflow_id }} / {{ run.status }}
           </div>
         </template>
         <div v-else class="empty-card" data-testid="project-detail-runs-empty-state">暂无 Runs</div>
@@ -95,8 +95,12 @@ async function loadData() {
   await agentStore.fetchAgents(id)
   await workflowStore.fetchWorkflows(id)
   workflows.value = workflowStore.workflows
-  await runStore.fetchRuns(id)
-  runs.value = runStore.runs
+  const runList: Run[] = []
+  for (const wf of workflows.value.slice(0, 10)) {
+    await runStore.fetchRuns(wf.id)
+    runList.push(...runStore.runs)
+  }
+  runs.value = runList.sort((a, b) => (b.id || 0) - (a.id || 0))
 }
 </script>
 

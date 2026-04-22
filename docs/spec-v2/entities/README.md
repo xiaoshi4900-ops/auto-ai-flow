@@ -8,7 +8,7 @@ Prevent different pages or different AI executors from giving the same entity di
 
 ## Entity Index
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/project.md)
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/agent.md)
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/workflow.md)
-- [run.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/run.md)
+- [project.md](docs/spec-v2/entities/project.md)
+- [agent.md](docs/spec-v2/entities/agent.md)
+- [workflow.md](docs/spec-v2/entities/workflow.md)
+- [run.md](docs/spec-v2/entities/run.md)

@@ -46,7 +46,7 @@ function Get-SectionLines {
 
 function Get-LinkedPagePacketFromTaskPacket {
   param([string]$PacketText)
-  $m = [regex]::Match($PacketText, '\(/C:/workspace/AutoAiFlow/docs/spec-v2/pages/([^)]+\.md)\)')
+  $m = [regex]::Match($PacketText, '\((?:/)?docs/spec-v2/pages/([^)]+\.md)\)')
   if (-not $m.Success) {
     throw "Could not find linked page packet in task packet."
   }

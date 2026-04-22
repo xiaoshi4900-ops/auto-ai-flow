@@ -10,27 +10,27 @@ Render workflow assets with explicit separation between API contract and derived
 
 ## Delegation Packet
 
-- [P07-workflow-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P07-workflow-list.packet.md)
+- [P07-workflow-list.packet.md](docs/task-packets/P07-workflow-list.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P07-workflow-list.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P07-workflow-list.md)
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
-- [P07-workflow-list.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P07-workflow-list.packet.md)
+- [P07-workflow-list.md](docs/spec-v2/pages/P07-workflow-list.md)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
+- [P07-workflow-list.packet.md](docs/task-packets/P07-workflow-list.packet.md)
 
 ### Frontend Code
 
-- [WorkflowListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowListPage.vue)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/api/workflow.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/workflow.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/types/workflow.ts)
+- [WorkflowListPage.vue](frontend/src/pages/workflows/WorkflowListPage.vue)
+- [workflow.ts](frontend/src/api/workflow.ts)
+- [workflow.ts](frontend/src/stores/workflow.ts)
+- [workflow.ts](frontend/src/types/workflow.ts)
 
 ### Tests
 
-- [p07-workflow-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
+- [p07-workflow-list-5d.spec.ts](frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -54,14 +54,14 @@ Render workflow assets with explicit separation between API contract and derived
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/workflow.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [workflow.md](docs/spec-v2/entities/workflow.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [p07-workflow-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
-- [WorkflowListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowListPage.vue)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [p07-workflow-list-5d.spec.ts](frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
+- [WorkflowListPage.vue](frontend/src/pages/workflows/WorkflowListPage.vue)
 
 ## Allowed Write Files
 

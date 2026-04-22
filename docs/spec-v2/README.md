@@ -1,4 +1,4 @@
-﻿# AutoAiFlow Spec v2
+# AutoAiFlow Spec v2
 
 ## Purpose
 
@@ -22,12 +22,12 @@ If an executor cannot identify where to work, it should start from the relevant
 
 ## Active Indexes
 
-- [core/01-loading-rules.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/01-loading-rules.md)
-- [core/04-contract-resolution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/04-contract-resolution.md)
-- [core/05-execution-modes.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/05-execution-modes.md)
-- [core/06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
-- [entities/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/README.md)
-- [pages/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/README.md)
-- [apis/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/README.md)
-- [backend/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/README.md)
-- [task-packets/README.md](/C:/workspace/AutoAiFlow/docs/task-packets/README.md)
+- [core/01-loading-rules.md](docs/spec-v2/core/01-loading-rules.md)
+- [core/04-contract-resolution.md](docs/spec-v2/core/04-contract-resolution.md)
+- [core/05-execution-modes.md](docs/spec-v2/core/05-execution-modes.md)
+- [core/06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
+- [entities/README.md](docs/spec-v2/entities/README.md)
+- [pages/README.md](docs/spec-v2/pages/README.md)
+- [apis/README.md](docs/spec-v2/apis/README.md)
+- [backend/README.md](docs/spec-v2/backend/README.md)
+- [task-packets/README.md](docs/task-packets/README.md)

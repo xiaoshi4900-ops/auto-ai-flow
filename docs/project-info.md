@@ -12,10 +12,10 @@
 - 当前阶段：一期 MVP 设计与实施准备阶段
 - 本地工作区路径：`C:\workspace\AutoAiFlow`
 - 主文档：
-  - [implementation-spec-mvp-v1.md](/C:/workspace/AutoAiFlow/docs/implementation-spec-mvp-v1.md)
-  - [tdd-task-breakdown-spec-v1.md](/C:/workspace/AutoAiFlow/docs/tdd-task-breakdown-spec-v1.md)
-  - [ui-reference-spec-v1.md](/C:/workspace/AutoAiFlow/docs/ui-reference-spec-v1.md)
-  - [playwright-test-cases-v1.md](/C:/workspace/AutoAiFlow/docs/playwright-test-cases-v1.md)
+  - [implementation-spec-mvp-v1.md](docs/implementation-spec-mvp-v1.md)
+  - [tdd-task-breakdown-spec-v1.md](docs/tdd-task-breakdown-spec-v1.md)
+  - [ui-reference-spec-v1.md](docs/ui-reference-spec-v1.md)
+  - [playwright-test-cases-v1.md](docs/playwright-test-cases-v1.md)
 
 ---
 

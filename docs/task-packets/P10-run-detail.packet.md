@@ -2,8 +2,8 @@
 
 ## Source Of Truth
 
-- Spec packet: [P10-run-detail.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P10-run-detail.md)
-- Rules root: [docs/spec-v2/README.md](/C:/workspace/AutoAiFlow/docs/spec-v2/README.md)
+- Spec packet: [P10-run-detail.md](docs/spec-v2/pages/P10-run-detail.md)
+- Rules root: [docs/spec-v2/README.md](docs/spec-v2/README.md)
 
 ## Recommended Read Order
 
@@ -14,7 +14,7 @@
 
 ## Primary Packet
 
-- [P10-run-detail.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P10-run-detail.md)
+- [P10-run-detail.md](docs/spec-v2/pages/P10-run-detail.md)
 
 ## Task Mode
 

@@ -10,32 +10,32 @@ Edit agent identity, capabilities, template binding, and policy without guessing
 
 ## Delegation Packet
 
-- [P05-agent-edit.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P05-agent-edit.packet.md)
+- [P05-agent-edit.packet.md](docs/task-packets/P05-agent-edit.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P05-agent-edit.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P05-agent-edit.md)
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/agent.md)
-- [model.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/model.md)
-- [project-agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/project-agent.md)
-- [P05-agent-edit.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P05-agent-edit.packet.md)
+- [P05-agent-edit.md](docs/spec-v2/pages/P05-agent-edit.md)
+- [agent.md](docs/spec-v2/apis/agent.md)
+- [model.md](docs/spec-v2/apis/model.md)
+- [project-agent.md](docs/spec-v2/backend/project-agent.md)
+- [P05-agent-edit.packet.md](docs/task-packets/P05-agent-edit.packet.md)
 
 ### Frontend Code
 
-- [AgentEditPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/agents/AgentEditPage.vue)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/api/agent.ts)
-- [model.ts](/C:/workspace/AutoAiFlow/frontend/src/api/model.ts)
-- [roleTemplate.ts](/C:/workspace/AutoAiFlow/frontend/src/api/roleTemplate.ts)
-- [skill.ts](/C:/workspace/AutoAiFlow/frontend/src/api/skill.ts)
-- [tool.ts](/C:/workspace/AutoAiFlow/frontend/src/api/tool.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/agent.ts)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/types/agent.ts)
+- [AgentEditPage.vue](frontend/src/pages/agents/AgentEditPage.vue)
+- [agent.ts](frontend/src/api/agent.ts)
+- [model.ts](frontend/src/api/model.ts)
+- [roleTemplate.ts](frontend/src/api/roleTemplate.ts)
+- [skill.ts](frontend/src/api/skill.ts)
+- [tool.ts](frontend/src/api/tool.ts)
+- [agent.ts](frontend/src/stores/agent.ts)
+- [agent.ts](frontend/src/types/agent.ts)
 
 ### Tests
 
-- [p05-agent-edit-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
+- [p05-agent-edit-5d.spec.ts](frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -59,16 +59,16 @@ Edit agent identity, capabilities, template binding, and policy without guessing
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/agent.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [agent.md](docs/spec-v2/entities/agent.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [agent.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/agent.md)
-- [model.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/model.md)
-- [p05-agent-edit-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
-- [AgentEditPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/agents/AgentEditPage.vue)
-- [agent.ts](/C:/workspace/AutoAiFlow/frontend/src/types/agent.ts)
+- [agent.md](docs/spec-v2/apis/agent.md)
+- [model.md](docs/spec-v2/apis/model.md)
+- [p05-agent-edit-5d.spec.ts](frontend/tests/e2e/p05-agent-edit-5d.spec.ts)
+- [AgentEditPage.vue](frontend/src/pages/agents/AgentEditPage.vue)
+- [agent.ts](frontend/src/types/agent.ts)
 
 ## Allowed Write Files
 

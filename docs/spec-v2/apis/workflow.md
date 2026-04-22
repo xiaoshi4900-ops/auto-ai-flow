@@ -4,33 +4,33 @@
 
 ### Spec Docs
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [workflow-runtime.md](/C:/workspace/AutoAiFlow/docs/spec-v2/backend/workflow-runtime.md)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [workflow-runtime.md](docs/spec-v2/backend/workflow-runtime.md)
 
 ### Backend Code
 
-- [workflows.py](/C:/workspace/AutoAiFlow/backend/app/api/v1/workflows.py)
-- [workflow.py](/C:/workspace/AutoAiFlow/backend/app/schemas/workflow.py)
-- [workflow_service.py](/C:/workspace/AutoAiFlow/backend/app/services/workflow_service.py)
+- [workflows.py](backend/app/api/v1/workflows.py)
+- [workflow.py](backend/app/schemas/workflow.py)
+- [workflow_service.py](backend/app/services/workflow_service.py)
 
 ### Frontend Code
 
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/api/workflow.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/workflow.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/types/workflow.ts)
-- [WorkflowListPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowListPage.vue)
-- [WorkflowEditorPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/workflows/WorkflowEditorPage.vue)
+- [workflow.ts](frontend/src/api/workflow.ts)
+- [workflow.ts](frontend/src/stores/workflow.ts)
+- [workflow.ts](frontend/src/types/workflow.ts)
+- [WorkflowListPage.vue](frontend/src/pages/workflows/WorkflowListPage.vue)
+- [WorkflowEditorPage.vue](frontend/src/pages/workflows/WorkflowEditorPage.vue)
 
 ### Tests
 
-- [test_workflow_schema.py](/C:/workspace/AutoAiFlow/backend/tests/contract/test_workflow_schema.py)
-- [test_workflow_api.py](/C:/workspace/AutoAiFlow/backend/tests/integration/test_workflow_api.py)
-- [p07-workflow-list-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
-- [p08-workflow-editor-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
+- [test_workflow_schema.py](backend/tests/contract/test_workflow_schema.py)
+- [test_workflow_api.py](backend/tests/integration/test_workflow_api.py)
+- [p07-workflow-list-5d.spec.ts](frontend/tests/e2e/p07-workflow-list-5d.spec.ts)
+- [p08-workflow-editor-5d.spec.ts](frontend/tests/e2e/p08-workflow-editor-5d.spec.ts)
 ## Cross-page Entity Contract
 
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/workflow.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [workflow.md](docs/spec-v2/entities/workflow.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Actual Routes
 

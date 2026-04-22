@@ -4,6 +4,9 @@
       <header class="section-header">
         <h2>执行记录</h2>
         <div class="filters">
+          <select v-model.number="selectedWorkflowId" class="workflow-select" @change="loadRuns">
+            <option v-for="wf in workflowStore.workflows" :key="wf.id" :value="wf.id">{{ wf.name }}</option>
+          </select>
           <button class="chip" data-testid="runs-filter-all" :class="{ active: currentFilter === 'all' }" @click="setFilter('all')">all</button>
           <button class="chip" data-testid="runs-filter-success" :class="{ active: currentFilter === 'success' }" @click="setFilter('success')">success</button>
           <button class="chip" data-testid="runs-filter-failed" :class="{ active: currentFilter === 'failed' }" @click="setFilter('failed')">failed</button>
@@ -30,20 +33,37 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useRunStore } from '@/stores/run'
+import { useWorkflowStore } from '@/stores/workflow'
+import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 
 const router = useRouter()
 const runStore = useRunStore()
+const workflowStore = useWorkflowStore()
+const projectStore = useProjectStore()
 const { runs } = storeToRefs(runStore)
 const currentFilter = ref('all')
+const selectedWorkflowId = ref<number | null>(null)
 
 const filteredRuns = computed(() => {
   if (currentFilter.value === 'all') return runs.value
   return runs.value.filter((r) => r.status === currentFilter.value)
 })
 
+async function loadRuns() {
+  if (!selectedWorkflowId.value) return
+  await runStore.fetchRuns(selectedWorkflowId.value)
+}
+
 onMounted(async () => {
-  await runStore.fetchRuns()
+  await projectStore.fetchProjects()
+  if (projectStore.projects.length) {
+    await workflowStore.fetchWorkflows(projectStore.projects[0].id)
+    if (workflowStore.workflows.length) {
+      selectedWorkflowId.value = workflowStore.workflows[0].id
+      await loadRuns()
+    }
+  }
 })
 
 function setFilter(status: string) {
@@ -86,6 +106,16 @@ function formatLatency(ms?: number): string {
 .filters {
   display: flex;
   gap: 8px;
+  align-items: center;
+}
+
+.workflow-select {
+  min-width: 220px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
 }
 
 .chip {
@@ -102,10 +132,6 @@ function formatLatency(ms?: number): string {
 .chip.active {
   background: var(--accent-primary);
   color: var(--bg-dark);
-}
-
-.chip:hover {
-  opacity: 0.85;
 }
 
 .table-list {
@@ -125,8 +151,13 @@ function formatLatency(ms?: number): string {
   align-items: center;
 }
 
-.ok { color: var(--accent-primary); }
-.bad { color: var(--accent-danger); }
+.ok {
+  color: var(--accent-primary);
+}
+
+.bad {
+  color: var(--accent-danger);
+}
 
 .actions {
   display: flex;
@@ -140,12 +171,6 @@ function formatLatency(ms?: number): string {
   background: transparent;
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(86, 240, 192, 0.3);
 }
 
 .empty-card {
@@ -160,6 +185,11 @@ function formatLatency(ms?: number): string {
 @media (max-width: 960px) {
   .runs-page {
     padding: 16px;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   .table-row {
     grid-template-columns: 1fr;

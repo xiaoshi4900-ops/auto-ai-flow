@@ -10,31 +10,31 @@ Render a project hub using real project data plus related workflow and run summa
 
 ## Delegation Packet
 
-- [P03-project-detail.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P03-project-detail.packet.md)
+- [P03-project-detail.packet.md](docs/task-packets/P03-project-detail.packet.md)
 
 ## Development Location
 
 ### Primary Docs
 
-- [P03-project-detail.md](/C:/workspace/AutoAiFlow/docs/spec-v2/pages/P03-project-detail.md)
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/project.md)
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [P03-project-detail.packet.md](/C:/workspace/AutoAiFlow/docs/task-packets/P03-project-detail.packet.md)
+- [P03-project-detail.md](docs/spec-v2/pages/P03-project-detail.md)
+- [project.md](docs/spec-v2/apis/project.md)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [P03-project-detail.packet.md](docs/task-packets/P03-project-detail.packet.md)
 
 ### Frontend Code
 
-- [ProjectDetailPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/projects/ProjectDetailPage.vue)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/api/project.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/api/workflow.ts)
-- [execution.ts](/C:/workspace/AutoAiFlow/frontend/src/api/execution.ts)
-- [project.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/project.ts)
-- [workflow.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/workflow.ts)
-- [run.ts](/C:/workspace/AutoAiFlow/frontend/src/stores/run.ts)
+- [ProjectDetailPage.vue](frontend/src/pages/projects/ProjectDetailPage.vue)
+- [project.ts](frontend/src/api/project.ts)
+- [workflow.ts](frontend/src/api/workflow.ts)
+- [execution.ts](frontend/src/api/execution.ts)
+- [project.ts](frontend/src/stores/project.ts)
+- [workflow.ts](frontend/src/stores/workflow.ts)
+- [run.ts](frontend/src/stores/run.ts)
 
 ### Tests
 
-- [p03-project-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p03-project-detail-5d.spec.ts)
+- [p03-project-detail-5d.spec.ts](frontend/tests/e2e/p03-project-detail-5d.spec.ts)
 ## Task Mode
 
 - `refactor`
@@ -58,16 +58,16 @@ Render a project hub using real project data plus related workflow and run summa
 - editing files outside `Allowed Write Files`
 ## Cross-page Entity Contract
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/entities/project.md)
-- [06-mapping-ownership.md](/C:/workspace/AutoAiFlow/docs/spec-v2/core/06-mapping-ownership.md)
+- [project.md](docs/spec-v2/entities/project.md)
+- [06-mapping-ownership.md](docs/spec-v2/core/06-mapping-ownership.md)
 
 ## Read First
 
-- [project.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/project.md)
-- [workflow.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/workflow.md)
-- [run-execution.md](/C:/workspace/AutoAiFlow/docs/spec-v2/apis/run-execution.md)
-- [p03-project-detail-5d.spec.ts](/C:/workspace/AutoAiFlow/frontend/tests/e2e/p03-project-detail-5d.spec.ts)
-- [ProjectDetailPage.vue](/C:/workspace/AutoAiFlow/frontend/src/pages/projects/ProjectDetailPage.vue)
+- [project.md](docs/spec-v2/apis/project.md)
+- [workflow.md](docs/spec-v2/apis/workflow.md)
+- [run-execution.md](docs/spec-v2/apis/run-execution.md)
+- [p03-project-detail-5d.spec.ts](frontend/tests/e2e/p03-project-detail-5d.spec.ts)
+- [ProjectDetailPage.vue](frontend/src/pages/projects/ProjectDetailPage.vue)
 
 ## Allowed Write Files
 

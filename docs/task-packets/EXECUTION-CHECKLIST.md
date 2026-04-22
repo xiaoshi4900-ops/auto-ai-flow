@@ -21,7 +21,7 @@ Use this checklist before and after each delegated AI run.
 
 ## After Execution
 
-1. Produce result JSON using [RESULT.schema.json](/C:/workspace/AutoAiFlow/docs/task-packets/RESULT.schema.json).
+1. Produce result JSON using [RESULT.schema.json](docs/task-packets/RESULT.schema.json).
 2. Run guard script:
 
 ```powershell
