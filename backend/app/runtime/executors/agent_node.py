@@ -1,7 +1,6 @@
 from app.schemas.runtime import RuntimeContextSchema, NodeExecutionResultSchema, StructuredOutputSchema, HandoffPayloadSchema
 from app.db.models.run import WorkflowRun
 from app.db.models.workflow import WorkflowNode
-from app.runtime.agent_runner import AgentRunner
 from app.runtime.normal_agent_runner import NormalAgentRunner
 from app.runtime.code_skill_runner import CodeSkillRunner
 from app.runtime.prompt_builder import PromptBuilder
@@ -71,6 +70,9 @@ class AgentNodeExecutor:
         for attempt in range(retry_limit + 1):
             try:
                 raw_output = self.normal_runner.run(prompt_result, model_config)
+                # Keep retry/failure semantics consistent when inner executor returns an error marker.
+                if isinstance(raw_output, dict) and raw_output.get("model") == "error":
+                    raise RuntimeError(raw_output.get("result", "Agent execution error"))
                 structured_output = StructuredOutputSchema(status="success", structured_output=raw_output)
                 handoff = self.handoff_builder.build(node_type="agent", raw_output=raw_output, structured_output=raw_output)
                 return NodeExecutionResultSchema(

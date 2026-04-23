@@ -65,7 +65,7 @@ def step_create_db(client):
 
 def step_install_deps(client):
     print("\n=== Install Python deps ===")
-    run_cmd(client, "pip3 install --user fastapi 'uvicorn[standard]' sqlalchemy 'psycopg[binary]' alembic pydantic pydantic-settings 'python-jose[cryptography]' 'passlib[bcrypt]' python-multipart 'celery[redis]' redis httpx langchain langchain-openai langchain-community 2>&1 | tail -5", timeout=600)
+    run_cmd(client, "pip3 install --user fastapi 'uvicorn[standard]' sqlalchemy 'psycopg[binary]' alembic pydantic pydantic-settings 'python-jose[cryptography]' 'passlib[bcrypt]' python-multipart 'celery[redis]' redis httpx openai 2>&1 | tail -5", timeout=600)
 
 
 def step_upload(client):

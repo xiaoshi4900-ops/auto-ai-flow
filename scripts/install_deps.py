@@ -33,7 +33,7 @@ def main():
         run_cmd(client, "pkill -f 'pip3 install' 2>/dev/null; echo killed")
         time.sleep(2)
 
-        print("\n=== Install core deps first (no langchain) ===")
+        print("\n=== Install core deps ===")
         run_cmd(client, "pip3 install --user fastapi==0.110.0 'uvicorn[standard]==0.29.0' sqlalchemy==2.0.29 'psycopg[binary]==3.1.18' alembic==1.13.1 pydantic==2.6.3 pydantic-settings==2.2.1 'python-jose[cryptography]==3.3.0' 'passlib[bcrypt]==1.7.4' python-multipart==0.0.9 'celery[redis]==5.3.6' redis==5.0.1 httpx==0.27.0 2>&1 | tail -5", timeout=600)
 
         print("\n=== Verify core deps ===")
@@ -42,11 +42,11 @@ def main():
         run_cmd(client, "python3 -c 'import celery; print(\"celery\", celery.__version__)'")
         run_cmd(client, "python3 -c 'import psycopg; print(\"psycopg\", psycopg.__version__)'")
 
-        print("\n=== Install langchain separately ===")
-        run_cmd(client, "pip3 install --user langchain==0.1.13 langchain-openai==0.0.8 langchain-community==0.0.20 2>&1 | tail -5", timeout=600)
+        print("\n=== Install openai sdk ===")
+        run_cmd(client, "pip3 install --user openai==1.76.0 2>&1 | tail -5", timeout=600)
 
-        print("\n=== Verify langchain ===")
-        run_cmd(client, "python3 -c 'import langchain; print(\"langchain\", langchain.__version__)'")
+        print("\n=== Verify openai sdk ===")
+        run_cmd(client, "python3 -c 'import openai; print(\"openai\", openai.__version__)'")
 
         print("\n=== DONE ===")
 

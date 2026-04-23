@@ -32,7 +32,7 @@ def main():
 
     try:
         print("\n=== Install Python deps (background) ===")
-        run_cmd(client, "nohup pip3 install --user fastapi 'uvicorn[standard]' sqlalchemy 'psycopg[binary]' alembic pydantic pydantic-settings 'python-jose[cryptography]' 'passlib[bcrypt]' python-multipart 'celery[redis]' redis httpx langchain langchain-openai langchain-community > ~/pip_install.log 2>&1 & echo $!")
+        run_cmd(client, "nohup pip3 install --user fastapi 'uvicorn[standard]' sqlalchemy 'psycopg[binary]' alembic pydantic pydantic-settings 'python-jose[cryptography]' 'passlib[bcrypt]' python-multipart 'celery[redis]' redis httpx openai > ~/pip_install.log 2>&1 & echo $!")
 
         print("\n=== Waiting for pip install to complete ===")
         for i in range(60):
